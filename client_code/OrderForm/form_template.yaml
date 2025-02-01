@@ -3,7 +3,7 @@ components_by_slot:
   - layout_properties: {}
     name: form1_1
     properties: {}
-    type: form:Form1
+    type: form:SpinnerWidget
   navigation: []
 is_package: true
 layout: {type: 'form:dep_lin1x4oec0ytd:Layouts.NavigationDrawerLayout'}

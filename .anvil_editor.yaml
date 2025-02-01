@@ -2,8 +2,8 @@ unique_ids:
   assets:
     theme.css: 6G44GIEQQRJLILWU6GQSQO5BTDFT5ZI3
   forms:
-    Form1: '1738358604552776604237817.5781'
-    Form2: '1738419402643167245701946.7637'
+    OrderForm: '1738419402643167245701946.7637'
+    SpinnerWidget: '1738358604552776604237817.5781'
   modules: {}
   scripts: {}
   server_modules: {}
