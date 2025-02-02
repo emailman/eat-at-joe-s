@@ -1,0 +1,15 @@
+components:
+- layout_properties: {grid_position: 'RPXKJZ,VXPIGS'}
+  name: text_1
+  properties: {text: Hamburger}
+  type: form:dep_lin1x4oec0ytd:_Components.Text
+- layout_properties: {grid_position: 'RPXKJZ,GHUFAC'}
+  name: spinner_widget_1
+  properties: {}
+  type: form:SpinnerWidget
+- layout_properties: {grid_position: 'RPXKJZ,KEHHSP'}
+  name: text_2
+  properties: {text: $5.99}
+  type: form:dep_lin1x4oec0ytd:_Components.Text
+container: {type: ColumnPanel}
+is_package: true

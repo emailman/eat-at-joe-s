@@ -58,5 +58,5 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/tables.yml
-startup: {module: SpinnerWidget, type: form}
+startup: {module: OrderForm2, type: form}
 startup_form: null
