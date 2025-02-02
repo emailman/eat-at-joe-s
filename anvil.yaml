@@ -1,13 +1,54 @@
 allow_embedding: false
+db_schema:
+  menu:
+    client: search
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: Item ID
+      type: string
+    - admin_ui: {order: 1, width: 109}
+      name: Description
+      type: string
+    - admin_ui: {order: 2, width: 116}
+      name: Unit Price
+      type: number
+    server: full
+    title: Menu
+  orders:
+    client: search
+    columns:
+    - admin_ui: {order: 0, width: 131}
+      name: Order ID
+      type: string
+    - admin_ui: {order: 1, width: 97}
+      name: Item ID
+      type: string
+    - admin_ui: {order: 2, width: 115}
+      name: Qty Ordered
+      type: number
+    - admin_ui: {order: 3, width: 118}
+      name: Unit Price
+      type: number
+    - admin_ui: {order: 4, width: 118}
+      name: Extended Price
+      type: number
+    - admin_ui: {order: 5, width: 201}
+      name: Date/Time Ordered
+      type: datetime
+    - admin_ui: {order: 6, width: 157}
+      name: Date/Time Ready
+      type: datetime
+    server: full
+    title: Orders
 dependencies:
 - config: {}
   dep_id: dep_lin1x4oec0ytd
   resolution_hints: {app_id: 4UK6WHQ6UX7AKELK, name: Material 3 Theme, package_name: m3}
   version: {version_tag: v1.2.1}
-metadata: {title: Spinner}
-name: Spinner Widget
+metadata: {title: Eat At Joe's}
+name: Eat At Joe's
 native_deps: null
-package_name: Spinner_Widget
+package_name: Eat_At_Joe_s
 runtime_options:
   client_version: '3'
   server_spec: {base: python310-minimal}
