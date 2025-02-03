@@ -4,42 +4,42 @@ db_schema:
     client: search
     columns:
     - admin_ui: {order: 0, width: 200}
-      name: Item ID
+      name: item_id
       type: string
     - admin_ui: {order: 1, width: 109}
-      name: Description
+      name: description
       type: string
-    - admin_ui: {order: 2, width: 116}
-      name: Unit Price
-      type: number
+    - admin_ui: {order: 3, width: 200}
+      name: unit_price
+      type: string
     server: full
-    title: Menu
+    title: menu
   orders:
     client: search
     columns:
-    - admin_ui: {order: 0, width: 131}
+    - admin_ui: {width: 131}
       name: Order ID
       type: string
-    - admin_ui: {order: 1, width: 97}
+    - admin_ui: {width: 97}
       name: Item ID
       type: string
-    - admin_ui: {order: 2, width: 115}
+    - admin_ui: {width: 115}
       name: Qty Ordered
       type: number
-    - admin_ui: {order: 3, width: 118}
+    - admin_ui: {width: 118}
       name: Unit Price
       type: number
-    - admin_ui: {order: 4, width: 118}
+    - admin_ui: {width: 118}
       name: Extended Price
       type: number
-    - admin_ui: {order: 5, width: 201}
+    - admin_ui: {width: 201}
       name: Date/Time Ordered
       type: datetime
-    - admin_ui: {order: 6, width: 157}
+    - admin_ui: {width: 157}
       name: Date/Time Ready
       type: datetime
     server: full
-    title: Orders
+    title: orders
 dependencies:
 - config: {}
   dep_id: dep_lin1x4oec0ytd
@@ -58,5 +58,5 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/tables.yml
-startup: {module: OrderForm2, type: form}
+startup: {module: OrderForm3, type: form}
 startup_form: null

@@ -1,5 +1,6 @@
 components:
-- layout_properties: {column: NMXPTW}
+- event_bindings: {click: button_1_click}
+  layout_properties: {column: NMXPTW}
   name: button_1
   properties:
     align: right
@@ -10,15 +11,16 @@ components:
     text: '-'
   type: form:dep_lin1x4oec0ytd:_Components.Button
 - layout_properties: {column: NMXPTW}
-  name: text_1
+  name: text_qty
   properties:
     align: center
     font_size: 20
     spacing:
       padding: [null, '5', null, '5']
-    text: '10'
+    text: '0'
   type: form:dep_lin1x4oec0ytd:_Components.Text
-- layout_properties: {column: NMXPTW}
+- event_bindings: {click: button_2_click}
+  layout_properties: {column: NMXPTW}
   name: button_2
   properties:
     appearance: elevated

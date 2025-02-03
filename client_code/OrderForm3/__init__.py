@@ -10,7 +10,10 @@ class OrderForm3(OrderForm3Template):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-    # Any code you write here will run before the form opens.
+    # Load the data from the menu table
+    self.repeating_panel_1.items = app_tables.menu.search()
+
+    print(self.repeating_panel_1.items[1]['unit_price'])
 
   def button_decr_click(self, **event_args):
     """Event handler for the decrease button"""
