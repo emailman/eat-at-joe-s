@@ -11,6 +11,8 @@ class RowTemplate1(RowTemplate1Template):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    # print(self.items[1]['unit_price'])
+    # print(self.repeating_panel_1.items[1]['unit_price'])
 
   def button_1_click(self, **event_args):
     """This method is called when the "-" button is clicked."""
@@ -18,14 +20,13 @@ class RowTemplate1(RowTemplate1Template):
     qty = int(self.text_qty.text)
     if qty > 0:
       self.text_qty.text = qty - 1
-      str_unit_price = self.text_unit_price.text
+      str_unit_price = self.item['unit_price']
 
       # Strip the $ from the unit_price
       unit_price = str_unit_price[1:]
 
       # Calculate the extended price
       ext_price = float(unit_price) * int(self.text_qty.text)
-      print(self.text_qty.text, unit_price, ext_price)
 
       # Show the extended price
       self.text_ext_price.text = f"${ext_price:.2f}"
@@ -36,14 +37,13 @@ class RowTemplate1(RowTemplate1Template):
     qty = int(self.text_qty.text)
     if qty < 10:
       self.text_qty.text = qty + 1
-      str_unit_price = self.unit_price.text
+      str_unit_price = self.item['unit_price']
 
       # Strip the $ from the unit_price
       unit_price = str_unit_price[1:]
 
       # Calculate the extended price
       ext_price = float(unit_price) * int(self.text_qty.text)
-      print(self.text_qty.text, unit_price, ext_price)
 
       # Show the extended price
       self.text_ext_price.text = f"${ext_price:.2f}"
