@@ -10,4 +10,5 @@ unique_ids:
     SpinnerWidget: '1738358604552776604237817.5781'
   modules: {}
   scripts: {}
-  server_modules: {}
+  server_modules:
+    ServerModule1: '1738614270059818485052859.7903'
