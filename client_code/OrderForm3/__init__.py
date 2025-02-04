@@ -13,4 +13,3 @@ class OrderForm3(OrderForm3Template):
 
     # Load the data from the menu table
     self.repeating_panel_1.items = app_tables.menu.search()
-

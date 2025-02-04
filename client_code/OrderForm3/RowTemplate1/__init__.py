@@ -44,3 +44,7 @@ class RowTemplate1(RowTemplate1Template):
 
       # Show the extended price
       self.text_ext_price.text = f"${ext_price:.2f}"
+
+  def text_ext_price_show(self, **event_args):
+    """This method is called when the component is shown on the screen."""
+    print(self.text_ext_price.text)
