@@ -1,7 +1,11 @@
 components:
 - layout_properties: {grid_position: 'DDKNBB,SYXVWR'}
   name: heading_1
-  properties: {align: center, text: Eat at Joe's Order Screen}
+  properties: {align: center, line_height: '1', text: Eat at Joe's}
+  type: form:dep_lin1x4oec0ytd:_Components.Heading
+- layout_properties: {grid_position: 'TAINFL,WEQFLO'}
+  name: heading_2
+  properties: {align: center, line_height: '1', style: headline, text: Order Screen}
   type: form:dep_lin1x4oec0ytd:_Components.Heading
 - components:
   - name: repeating_panel_1
