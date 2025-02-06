@@ -17,16 +17,8 @@ class RowTemplate1(RowTemplate1Template):
     qty = int(self.text_qty.text)
     if qty > 0:
       self.text_qty.text = qty - 1
-      str_unit_price = self.item['unit_price']
-
-      # Strip the $ from the unit_price
-      unit_price = str_unit_price[1:]
-
-      # Calculate the extended price
-      ext_price = float(unit_price) * int(self.text_qty.text)
-
-      # Show the extended price
-      self.text_ext_price.text = f"${ext_price:.2f}"
+      self.calc_extended_price()
+      
 
   def button_2_click(self, **event_args):
     """This method is called when the "+" button is clicked."""
@@ -34,17 +26,16 @@ class RowTemplate1(RowTemplate1Template):
     qty = int(self.text_qty.text)
     if qty < 10:
       self.text_qty.text = qty + 1
-      str_unit_price = self.item['unit_price']
+      self.calc_extended_price()
 
-      # Strip the $ from the unit_price
-      unit_price = str_unit_price[1:]
+  def calc_extended_price(self):
+    str_unit_price = self.item['unit_price']
 
-      # Calculate the extended price
-      ext_price = float(unit_price) * int(self.text_qty.text)
+    # Strip the $ from the unit_price
+    unit_price = str_unit_price[1:]
 
-      # Show the extended price
-      self.text_ext_price.text = f"${ext_price:.2f}"
+    # Calculate the extended price
+    ext_price = float(unit_price) * int(self.text_qty.text)
 
-  def text_ext_price_show(self, **event_args):
-    """This method is called when the component is shown on the screen."""
-    print(self.text_ext_price.text)
+    # Show the extended price
+    self.text_ext_price.text = f"${ext_price:.2f}"
