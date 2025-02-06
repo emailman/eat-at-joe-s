@@ -42,6 +42,5 @@ class RowTemplate1(RowTemplate1Template):
     # Show the extended price
     self.text_ext_price.text = f"${ext_price:.2f}"
 
-    # Update the total price by adding the extended prices
-    # for all items
-    pass
+    # Raise an event to calculate the total price of the order
+    self.parent.raise_event('x-add-prices', item=self.item)
