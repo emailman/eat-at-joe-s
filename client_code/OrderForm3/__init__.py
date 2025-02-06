@@ -13,3 +13,8 @@ class OrderForm3(OrderForm3Template):
 
     # Load the data from the menu table
     self.repeating_panel_1.items = app_tables.menu.search()
+    
+    sum = 0
+    for item in self.repeating_panel_1.get_components():
+      sum += float(item.item['unit_price'][1:]) * int(item.text_qty.text)
+    print(sum)
