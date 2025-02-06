@@ -11,6 +11,7 @@ class RowTemplate1(RowTemplate1Template):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
+  
   def button_1_click(self, **event_args):
     """This method is called when the "-" button is clicked."""
     # Decrease the quantity, but not less than 0
@@ -28,6 +29,7 @@ class RowTemplate1(RowTemplate1Template):
       self.text_qty.text = qty + 1
       self.calc_extended_price()
 
+  
   def calc_extended_price(self):
     str_unit_price = self.item['unit_price']
 
@@ -39,3 +41,7 @@ class RowTemplate1(RowTemplate1Template):
 
     # Show the extended price
     self.text_ext_price.text = f"${ext_price:.2f}"
+
+    # Update the total price by adding the extended prices
+    # for all items
+    pass
