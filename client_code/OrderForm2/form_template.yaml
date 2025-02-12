@@ -1,7 +1,7 @@
 components:
 - layout_properties: {grid_position: 'RPXKJZ,VXPIGS'}
   name: text_1
-  properties: {font_size: 20, text: Hamburger}
+  properties: {font_size: 20, text: Vegieburger}
   type: form:dep_lin1x4oec0ytd:_Components.Text
 - event_bindings: {click: button_decr_click}
   layout_properties: {grid_position: 'RPXKJZ,CMMWSG'}
