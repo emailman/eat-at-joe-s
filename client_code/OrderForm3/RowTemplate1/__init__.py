@@ -17,7 +17,7 @@ class RowTemplate1(RowTemplate1Template):
     # Decrease the quantity, but not less than 0
     qty = int(self.text_qty.text)
     if qty > 0:
-      self.text_qty.text = qty - 1
+      self.text_qty.text = f'{qty - 1:2d}'
       self.calc_extended_price()
       
 
@@ -26,7 +26,7 @@ class RowTemplate1(RowTemplate1Template):
     # Increase the quantity, but not more than 10
     qty = int(self.text_qty.text)
     if qty < 10:
-      self.text_qty.text = qty + 1
+      self.text_qty.text = f'{qty + 1:2d}'
       self.calc_extended_price()
 
   
