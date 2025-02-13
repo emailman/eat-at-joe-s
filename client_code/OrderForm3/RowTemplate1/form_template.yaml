@@ -21,12 +21,13 @@ components:
   name: text_qty
   properties:
     align: center
-    font_family: courier_bold
+    bold: true
+    font_family: courier
     font_size: 20
     spacing:
-      margin: [null, '5', null, '5']
-      padding: [null, '5', null, '5']
-    text: '1'
+      margin: [null, '-5', null, '-5']
+      padding: [null, '0', null, '0']
+    text: '10'
   type: form:dep_lin1x4oec0ytd:_Components.Text
 - event_bindings: {click: button_2_click}
   layout_properties: {column: NMXPTW}
