@@ -26,7 +26,7 @@ class RowTemplate1(RowTemplate1Template):
     # Increase the quantity, but not more than 10
     qty = int(self.text_qty.text)
     if qty < 10:
-      self.text_qty.text = f'{qty + 1:3d}'
+      self.text_qty.text = qty + 1
       self.calc_extended_price()
 
   
