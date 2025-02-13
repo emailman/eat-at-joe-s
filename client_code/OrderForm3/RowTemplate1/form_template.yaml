@@ -13,7 +13,7 @@ components:
     font_size: 30
     icon_align: left
     spacing:
-      margin: [null, '-5', null, '-5']
+      margin: [null, '0', null, '0']
       padding: [null, '15', null, '15']
     text: '-'
   type: form:dep_lin1x4oec0ytd:_Components.Button
@@ -24,10 +24,11 @@ components:
     bold: true
     font_family: courier
     font_size: 20
+    scale: large
     spacing:
-      margin: [null, '-5', null, '-5']
+      margin: [null, '0', null, '0']
       padding: [null, '0', null, '0']
-    text: '10'
+    text: '1'
   type: form:dep_lin1x4oec0ytd:_Components.Text
 - event_bindings: {click: button_2_click}
   layout_properties: {column: NMXPTW}
@@ -37,7 +38,7 @@ components:
     appearance: elevated
     font_size: 24
     spacing:
-      margin: [null, '-5', null, '-5']
+      margin: [null, '0', null, '0']
       padding: [null, '15', null, '15']
     text: +
   type: form:dep_lin1x4oec0ytd:_Components.Button

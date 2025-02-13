@@ -16,9 +16,9 @@ components:
   properties:
     columns:
     - {data_key: item_id, expand: false, id: ZVVIOE, title: Item ID, width: 78}
-    - {data_key: description, expand: false, id: DFYTJW, title: Description, width: 295}
-    - {data_key: unit_price, expand: false, id: LXGBDR, title: Item Price, width: '120'}
-    - {data_key: '', expand: false, id: NMXPTW, title: Order Quantity, width: 251}
+    - {data_key: description, expand: false, id: DFYTJW, title: Description, width: 251}
+    - {data_key: unit_price, expand: false, id: LXGBDR, title: Item Price, width: 103}
+    - {data_key: '', expand: false, id: NMXPTW, title: Order Quantity, width: 293}
     - {data_key: text_ext_price, expand: false, id: NADZTW, title: Price, width: 98}
     - {data_key: column_1, id: CTTWNK, title: Column 1}
   type: DataGrid
