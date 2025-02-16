@@ -1,5 +1,13 @@
 allow_embedding: false
 db_schema:
+  categories:
+    client: search
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: category
+      type: string
+    server: full
+    title: categories
   menu:
     client: search
     columns:
@@ -15,6 +23,10 @@ db_schema:
     - admin_ui: {order: 4, width: 200}
       name: photo
       type: media
+    - admin_ui: {order: 5, width: 127}
+      name: category
+      target: categories
+      type: link_single
     server: full
     title: menu
   order_tracking:
@@ -78,5 +90,5 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/tables.yml
-startup: {module: OrderForm3, type: form}
+startup: {module: AddItem, type: form}
 startup_form: null

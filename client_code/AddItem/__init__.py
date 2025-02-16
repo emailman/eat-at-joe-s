@@ -11,4 +11,9 @@ class AddItem(AddItemTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-    # Any code you write here will run before the form opens.
+    # Build a list of tuples for the category dropdown
+    self.categories = [(cat['category'], cat) 
+                       for cat in app_tables.categories.search()]
+    
+    # Populate the dropdown
+    self.category_dropdown_menu.items = self.categories
