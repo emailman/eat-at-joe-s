@@ -40,7 +40,7 @@ class RowTemplate1(RowTemplate1Template):
     ext_price = float(unit_price) * int(self.text_qty.text)
 
     # Show the extended price
-    self.text_ext_price.text = f"${ext_price:.2f}"
+    self.text_ext_price.text = f'${ext_price:.2f}'
 
     # Raise an event to calculate the total price of the order
     self.parent.raise_event('x-add-prices', item=self.item)
