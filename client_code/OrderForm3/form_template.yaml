@@ -5,7 +5,7 @@ components:
   type: form:dep_lin1x4oec0ytd:_Components.Heading
 - layout_properties: {grid_position: 'TAINFL,WEQFLO'}
   name: heading_2
-  properties: {align: center, line_height: '1', style: headline, text: Order Screen}
+  properties: {align: center, icon_size: -1, line_height: '1', style: headline, text: Order Screen}
   type: form:dep_lin1x4oec0ytd:_Components.Heading
 - components:
   - name: repeating_panel_1
