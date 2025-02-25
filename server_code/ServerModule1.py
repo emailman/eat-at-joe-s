@@ -24,3 +24,11 @@ def add_item(item_dict):
 def get_items():
   # Get a list of items from the menu table
   return app_tables.menu.search(tables.order_by("item_id", ascending=True))
+
+@anvil.server.callable
+def delete_article(article):
+  # check that the article being deleted exists in the Data Table
+  if app_tables.articles.has_row(article):
+    article.delete()
+  else:
+    raise Exception("Item does not exist")

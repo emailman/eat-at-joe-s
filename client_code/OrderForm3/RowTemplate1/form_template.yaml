@@ -73,7 +73,8 @@ components:
   name: flow_panel_1
   properties: {}
   type: FlowPanel
-- layout_properties: {column: SDAGNT}
+- event_bindings: {click: delete_item_button_click}
+  layout_properties: {column: SDAGNT}
   name: delete_item_button
   properties:
     appearance: filled

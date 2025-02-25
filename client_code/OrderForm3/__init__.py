@@ -17,6 +17,9 @@ class OrderForm3(OrderForm3Template):
 
     # Handle the event to add the prices for all the items
     self.repeating_panel_1.set_event_handler('x-add-prices', self.add_item_prices)
+
+    # Set an event handler on the Repeating Panel 
+    self.repeating_panel_1.set_event_handler('x-delete-item', self.delete_item)
     
   def add_item_prices(self, item, **event_args):
     # Update the total price by adding the extended prices
@@ -46,3 +49,10 @@ class OrderForm3(OrderForm3Template):
     # Load existing items from the Data Table, 
     # and display them in the RepeatingPanel
     self.repeating_panel_1.items = anvil.server.call('get_items')
+
+  def delete_item(self, item, **event_args):
+    # Delete the article
+    anvil.server.call('delete_item', item)
+
+    # Refresh articles to remove the deleted article from the Homepage
+    self.refresh_items()

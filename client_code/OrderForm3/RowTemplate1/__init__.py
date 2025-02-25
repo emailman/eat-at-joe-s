@@ -44,3 +44,11 @@ class RowTemplate1(RowTemplate1Template):
 
     # Raise an event to calculate the total price of the order
     self.parent.raise_event('x-add-prices', item=self.item)
+
+  
+  def delete_item_button_click(self, **event_args):
+    # Get the user to confirm if they wish to delete the article
+    # If yes, raise the 'x-delete-article' event on the parent 
+    # (which is the articles_panel on Homepage)
+    if confirm("Are you sure you want to delete {}?".format(self.item['description'])):
+      self.parent.raise_event('x-delete-item', article=self.item)
