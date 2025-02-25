@@ -38,9 +38,9 @@ components:
     - {data_key: text_ext_price, expand: false, id: NADZTW, title: Price, width: 101}
     - {data_key: '', expand: false, id: SDAGNT, title: '', width: 146}
   type: DataGrid
-- event_bindings: {click: button_add_item_click}
+- event_bindings: {click: add_item_button_click}
   layout_properties: {grid_position: 'FFELTI,FSJPRQ'}
-  name: button_add_item
+  name: add_item_button
   properties: {align: center, text: ADD ITEM}
   type: form:dep_lin1x4oec0ytd:_Components.Button
 - layout_properties: {grid_position: 'FFELTI,GNMKUL'}

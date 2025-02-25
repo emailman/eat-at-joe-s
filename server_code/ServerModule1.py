@@ -15,3 +15,7 @@ import anvil.server
 #   print("Hello, " + name + "!")
 #   return 42
 #
+
+@anvil.server.callable
+def add_item(item_dict):
+  app_tables.menu.add_row(**item_dict)

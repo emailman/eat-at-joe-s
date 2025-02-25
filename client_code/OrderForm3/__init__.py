@@ -26,6 +26,6 @@ class OrderForm3(OrderForm3Template):
       # sum += float(item.item['unit_price'][1:]) * int(item.text_qty.text)
     self.text_total.text = f'${sum:.2f}'
 
-  def button_add_item_click(self, **event_args):
+  def add_item_button_click(self, **event_args):
     """This method is called when the component is clicked."""
     pass
