@@ -17,3 +17,8 @@ class AddItem(AddItemTemplate):
     
     # Populate the dropdown
     self.category_dropdown_menu.items = self.categories
+
+  def file_loader_1_change(self, file, **event_args):
+    """This method is called when a new file is loaded into this FileLoader"""
+    # self.item['image'] = file
+    pass

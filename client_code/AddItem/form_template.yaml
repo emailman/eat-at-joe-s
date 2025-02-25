@@ -34,7 +34,8 @@ components:
   name: text_3
   properties: {text: 'Photo:'}
   type: form:dep_lin1x4oec0ytd:_Components.Text
-- layout_properties: {grid_position: 'HIYLHM,NVMNGU'}
+- event_bindings: {change: file_loader_1_change}
+  layout_properties: {grid_position: 'HIYLHM,NVMNGU'}
   name: file_loader_1
   properties: {}
   type: form:dep_lin1x4oec0ytd:_Components.FileLoader
