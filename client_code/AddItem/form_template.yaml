@@ -37,7 +37,7 @@ components:
 - event_bindings: {change: file_loader_1_change}
   layout_properties: {grid_position: 'HIYLHM,NVMNGU'}
   name: file_loader_1
-  properties: {}
+  properties: {role: null, show_state: true}
   type: form:dep_lin1x4oec0ytd:_Components.FileLoader
 container: {type: ColumnPanel}
 is_package: true
