@@ -4,6 +4,7 @@ import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from ..AddItem import AddItem
 
 
 class OrderForm3(OrderForm3Template):
@@ -27,5 +28,21 @@ class OrderForm3(OrderForm3Template):
     self.text_total.text = f'${sum:.2f}'
 
   def add_item_button_click(self, **event_args):
-    """This method is called when the component is clicked."""
-    pass
+    # Initialise an empty dictionary to store the user inputs
+    new_item = {}
+    # Open an alert displaying the 'ArticleEdit' Form
+    save_clicked = alert(
+      content=AddItem(item=new_item),
+      title="Add Item",
+      large=True,
+      buttons=[("Save", True), ("Cancel", False)]
+    )
+    # If the alert returned 'True', the save button was clicked.
+    if save_clicked:
+      anvil.server.call('add_item', new_item)
+      self.refresh_items()
+
+  def refresh_items(self):
+    # Load existing items from the Data Table, 
+    # and display them in the RepeatingPanel
+    self.repeating_panel_1.items = anvil.server.call('get_items')
