@@ -54,6 +54,7 @@ class RowTemplate1(RowTemplate1Template):
     if confirm(f"Are you sure you want to delete:\n{self.item['description']}"):
       self.parent.raise_event('x-delete-item', item=self.item)
 
+  
   def edit_item_button_click(self, **event_args):
     # Create a copy of the existing item from the Data Table 
     item_copy = dict(self.item)
