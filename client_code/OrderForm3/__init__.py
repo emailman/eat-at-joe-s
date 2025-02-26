@@ -33,7 +33,7 @@ class OrderForm3(OrderForm3Template):
   def add_item_button_click(self, **event_args):
     # Initialise an empty dictionary to store the user inputs
     new_item = {}
-    # Open an alert displaying the 'ArticleEdit' Form
+    # Open an alert displaying the 'AddItem' Form
     save_clicked = alert(
       content=AddItem(item=new_item),
       title="Add Item",

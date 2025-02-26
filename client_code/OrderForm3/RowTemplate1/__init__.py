@@ -48,7 +48,7 @@ class RowTemplate1(RowTemplate1Template):
   
   def delete_item_button_click(self, **event_args):
     # Get the user to confirm if they wish to delete the article
-    # If yes, raise the 'x-delete-article' event on the parent 
-    # (which is the articles_panel on Homepage)
-    if confirm("Are you sure you want to delete {}?".format(self.item['description'])):
-      self.parent.raise_event('x-delete-item', article=self.item)
+    # If yes, raise the 'x-delete-article' event on the parent, 
+    # which is the repeating panel on Menu Order page.
+    if confirm(f"Are you sure you want to delete:\n{self.item['description']}"):
+      self.parent.raise_event('x-delete-item', item=self.item)

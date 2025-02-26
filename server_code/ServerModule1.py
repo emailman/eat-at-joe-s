@@ -26,9 +26,9 @@ def get_items():
   return app_tables.menu.search(tables.order_by("item_id", ascending=True))
 
 @anvil.server.callable
-def delete_article(article):
-  # check that the article being deleted exists in the Data Table
-  if app_tables.articles.has_row(article):
-    article.delete()
+def delete_item(item):
+  # check that the item being deleted exists in the menu
+  if app_tables.menu.has_row(item):
+    item.delete()
   else:
     raise Exception("Item does not exist")
