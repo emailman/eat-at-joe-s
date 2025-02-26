@@ -59,7 +59,7 @@ class RowTemplate1(RowTemplate1Template):
     # Create a copy of the existing item from the Data Table 
     item_copy = dict(self.item)
     
-    # Open an alert displaying the 'ArticleEdit' Form
+    # Open an alert displaying the 'AddItem' Form
     save_clicked = alert(
       content=AddItem(item=item_copy),
       title="Update Item",

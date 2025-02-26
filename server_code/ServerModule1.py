@@ -35,7 +35,7 @@ def delete_item(item):
 
 @anvil.server.callable
 def update_item(item, item_dict):
-  # check that the article given is really a row in the ‘articles’ table
+  # check that the item being updated exists in the menu
   if app_tables.menu.has_row(item):
     item.update(**item_dict)
   else:
