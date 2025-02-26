@@ -4,6 +4,7 @@ import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from ...AddItem import AddItem
 
 
 class RowTemplate1(RowTemplate1Template):
@@ -52,3 +53,22 @@ class RowTemplate1(RowTemplate1Template):
     # which is the repeating panel on Menu Order page.
     if confirm(f"Are you sure you want to delete:\n{self.item['description']}"):
       self.parent.raise_event('x-delete-item', item=self.item)
+
+  def edit_item_button_click(self, **event_args):
+    # Create a copy of the existing item from the Data Table 
+    item_copy = dict(self.item)
+    
+    # Open an alert displaying the 'ArticleEdit' Form
+    save_clicked = alert(
+      content=AddItem(item=item_copy),
+      title="Update Item",
+      large=True,
+      buttons=[("Save", True), ("Cancel", False)]
+    )
+
+    # Update the article if the user clicks save
+    if save_clicked:
+      anvil.server.call('update_item', self.item, item_copy)
+
+      # Now refresh the page
+      self.refresh_data_bindings()

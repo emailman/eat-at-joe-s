@@ -32,3 +32,11 @@ def delete_item(item):
     item.delete()
   else:
     raise Exception("Item does not exist")
+
+@anvil.server.callable
+def update_item(item, item_dict):
+  # check that the article given is really a row in the ‘articles’ table
+  if app_tables.menu.has_row(item):
+    item.update(**item_dict)
+  else:
+    raise Exception("Item does not exist")

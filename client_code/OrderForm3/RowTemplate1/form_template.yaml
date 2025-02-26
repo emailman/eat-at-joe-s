@@ -60,7 +60,8 @@ components:
   properties: {}
   type: ColumnPanel
 - components:
-  - layout_properties: {width: 43}
+  - event_bindings: {click: edit_item_button_click}
+    layout_properties: {width: 43}
     name: edit_item_button
     properties:
       icon: mi:edit
