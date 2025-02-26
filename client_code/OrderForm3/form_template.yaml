@@ -38,6 +38,7 @@ components:
     - {data_key: '', expand: false, id: NMXPTW, title: Order Quantity, width: 219}
     - {data_key: text_ext_price, expand: false, id: NADZTW, title: Price, width: 99}
     - {data_key: '', expand: false, id: SDAGNT, title: '', width: 146}
+    show_page_controls: false
   type: DataGrid
 - event_bindings: {click: add_item_button_click}
   layout_properties: {grid_position: 'FFELTI,FSJPRQ'}
