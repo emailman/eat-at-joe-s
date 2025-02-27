@@ -52,7 +52,15 @@ components:
 - event_bindings: {change: file_loader_1_change}
   layout_properties: {grid_position: 'HIYLHM,NVMNGU'}
   name: file_loader_1
-  properties: {role: null, show_state: true}
+  properties: {role: null, show_state: true, text: Upload Photo}
   type: form:dep_lin1x4oec0ytd:_Components.FileLoader
+- data_bindings:
+  - {code: 'self.item[''photo'']', property: source, writeback: false}
+  layout_properties: {grid_position: 'JVLIIF,OAEFJH'}
+  name: image_1
+  properties:
+    display_mode: shrink_to_fit
+    margin: [null, '300', null, '300']
+  type: Image
 container: {type: ColumnPanel}
 is_package: true
