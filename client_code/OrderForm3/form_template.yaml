@@ -31,7 +31,7 @@ components:
   name: data_grid_1
   properties:
     columns:
-    - {data_key: photo, expand: false, id: CTTWNK, title: '', width: 142}
+    - {data_key: '', expand: false, id: CTTWNK, title: '', width: 142}
     - {data_key: item_id, expand: false, id: VYBZGR, title: Item ID, width: '75'}
     - {data_key: description, expand: false, id: DFYTJW, title: Description, width: 160}
     - {data_key: unit_price, expand: false, id: LXGBDR, title: Item Price, width: 100}

@@ -77,7 +77,7 @@ components:
   type: FlowPanel
 - layout_properties: {column: CTTWNK}
   name: image_1
-  properties: {height: 107, source: ''}
+  properties: {height: 107, source: 'self.item[''photo'']'}
   type: Image
 container:
   properties: {align: center, font_size: 18}
