@@ -56,3 +56,17 @@ class OrderForm3(OrderForm3Template):
 
     # Refresh articles to remove the deleted article from the Homepage
     self.refresh_items()
+
+  def button_order_click(self, **event_args):
+    """This method is called when the order button is clicked."""
+    orders = anvil.server.call('get_orders')
+    
+    # Create a list of existing orders ids
+    order_list = []
+    for order in orders:
+      order_list.append(order['order_id'])
+    
+    
+    # Create a new order id
+    new_order = max(order_list) + 1 if order_list  else 1
+    print(new_order)

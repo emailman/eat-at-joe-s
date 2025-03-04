@@ -40,3 +40,12 @@ def update_item(item, item_dict):
     item.update(**item_dict)
   else:
     raise Exception("Item does not exist")
+
+@anvil.server.callable
+def add_order(order_dict):
+  app_tables.orders.add_row(**order_dict)
+
+@anvil.server.callable
+def get_orders():
+  # get a list of orders from the orders table
+  return app_tables.orders.search()
