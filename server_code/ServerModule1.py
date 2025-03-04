@@ -22,7 +22,7 @@ def add_item(item_dict):
 
 @anvil.server.callable
 def get_items():
-  # Get a list of items from the menu table
+  # get a list of items from the menu table
   return app_tables.menu.search(tables.order_by("category", ascending=True))
 
 @anvil.server.callable

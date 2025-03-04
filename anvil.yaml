@@ -55,20 +55,20 @@ db_schema:
   orders:
     client: search
     columns:
-    - admin_ui: {width: 131}
-      name: Order ID
+    - admin_ui: {order: 1, width: 97}
+      name: item_id
       type: string
-    - admin_ui: {width: 97}
-      name: Item ID
-      type: string
-    - admin_ui: {width: 115}
-      name: Qty Ordered
+    - admin_ui: {order: 2, width: 115}
+      name: qty_ordered
       type: number
-    - admin_ui: {width: 118}
-      name: Unit Price
+    - admin_ui: {order: 3, width: 118}
+      name: unit_price
       type: number
-    - admin_ui: {width: 118}
-      name: Extended Price
+    - admin_ui: {order: 4, width: 118}
+      name: extended_price
+      type: number
+    - admin_ui: {order: -1, width: 200}
+      name: order_id
       type: number
     server: full
     title: orders
