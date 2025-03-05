@@ -66,6 +66,18 @@ class OrderForm3(OrderForm3Template):
     for order in orders:
       order_list.append(order['order_id'])
     
-    # Create a new order id
+    # Create a new, unique order id
     new_order = max(order_list) + 1 if order_list  else 1
-    print(new_order)
+
+    # Get the fields in all rows of the repeating panel
+    for item in self.repeating_panel_1.get_components():
+      # Only get info for the row if the item was ordered
+      if int(item.text_qty.text) > 0:
+        print(
+          new_order, 
+          item.item['item_id'], 
+          item.item['description'], 
+          item.text_qty.text,
+          item.item['unit_price'],
+          item.text_ext_price.text
+        )
