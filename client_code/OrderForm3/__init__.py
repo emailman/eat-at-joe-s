@@ -81,3 +81,12 @@ class OrderForm3(OrderForm3Template):
           item.item['unit_price'],
           item.text_ext_price.text
         )
+
+        order_dict = {
+          'order_id': new_order,
+          'item_id': item.item['item_id'],
+          'qty_ordered': item.text_qty.text,
+          'unit_price': float(item.item['unit_price'].lstrip('$')),
+          'extended_price': float(item.text_ext_price.text.lstrip('$'))
+        }
+        anvil.server.call('add_order', order_dict)
