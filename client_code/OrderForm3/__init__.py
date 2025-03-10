@@ -85,8 +85,17 @@ class OrderForm3(OrderForm3Template):
         order_dict = {
           'order_id': new_order,
           'item_id': item.item['item_id'],
+          'description': item.item['description'],
           'qty_ordered': item.text_qty.text,
           'unit_price': float(item.item['unit_price'].lstrip('$')),
           'extended_price': float(item.text_ext_price.text.lstrip('$'))
         }
         anvil.server.call('add_order', order_dict)
+
+        # Get all the rows of the repeating panel
+        for item in self.repeating_panel_1.get_components():
+          # Reset the quantity ordered, extended price and total to 0
+          item.text_qty.text = 0
+          item.text_ext_price.text = '$0.00'
+          self.text_total.text = '$0.00'
+          

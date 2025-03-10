@@ -61,15 +61,18 @@ db_schema:
     - admin_ui: {order: 2, width: 115}
       name: qty_ordered
       type: number
-    - admin_ui: {order: 3, width: 118}
+    - admin_ui: {order: 3, width: 122}
       name: unit_price
       type: number
-    - admin_ui: {order: 4, width: 118}
+    - admin_ui: {order: 4, width: 132}
       name: extended_price
       type: number
-    - admin_ui: {order: -1, width: 200}
+    - admin_ui: {order: -1, width: 116}
       name: order_id
       type: number
+    - admin_ui: {order: 1.5, width: 200}
+      name: description
+      type: string
     server: full
     title: orders
 dependencies:
