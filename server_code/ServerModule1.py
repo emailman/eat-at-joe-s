@@ -2,6 +2,8 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
+from datetime import datetime
+from time import localtime
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -52,4 +54,7 @@ def get_orders():
 
 @anvil.server.callable
 def add_order_tracking(order_tracking_dict):
-  app_tables.order_tracking.add_row(**order_tracking_dict)
+  app_tables.order_tracking.add_row(
+    order_entered=datetime.now().astimezone(),
+    
+    **order_tracking_dict)
