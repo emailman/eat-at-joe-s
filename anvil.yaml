@@ -34,22 +34,16 @@ db_schema:
     columns:
     - admin_ui: {order: 0, width: 200}
       name: order_id
-      type: string
-    - admin_ui: {order: 1, width: 200}
-      name: item_id
-      type: string
-    - admin_ui: {order: 2, width: 200}
-      name: quantity
       type: number
-    - admin_ui: {order: 3, width: 200}
-      name: unit_price
-      type: string
-    - admin_ui: {order: 4, width: 200}
-      name: ext_price
-      type: string
-    - admin_ui: {order: 5, width: 200}
-      name: image
-      type: media
+    - admin_ui: {order: 1, width: 200}
+      name: order_entered
+      type: datetime
+    - admin_ui: {order: 2, width: 200}
+      name: order_ready
+      type: datetime
+    - admin_ui: {order: 0.5, width: 200}
+      name: order_total
+      type: number
     server: full
     title: order_tracking
   orders:

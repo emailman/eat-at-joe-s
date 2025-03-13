@@ -59,31 +59,24 @@ class OrderForm3(OrderForm3Template):
 
   def button_order_click(self, **event_args):
     """This method is called when the order button is clicked."""
-    orders = anvil.server.call('get_orders')
-    
-    # Create a list of existing orders ids
-    order_list = []
-    for order in orders:
-      order_list.append(order['order_id'])
-    
-    # Create a new, unique order id
-    new_order = max(order_list) + 1 if order_list  else 1
+    # Get a new order number
+    new_order_id = self.get_new_order_id()
 
     # Get the fields in all rows of the repeating panel
     for item in self.repeating_panel_1.get_components():
       # Only get info for the row if the item was ordered
       if int(item.text_qty.text) > 0:
         print(
-          new_order, 
+          new_order_id, 
           item.item['item_id'], 
           item.item['description'], 
-          item.text_qty.text,
+          int(item.text_qty.text),
           item.item['unit_price'],
           item.text_ext_price.text
         )
 
         order_dict = {
-          'order_id': new_order,
+          'order_id': new_order_id,
           'item_id': item.item['item_id'],
           'description': item.item['description'],
           'qty_ordered': item.text_qty.text,
@@ -92,10 +85,25 @@ class OrderForm3(OrderForm3Template):
         }
         anvil.server.call('add_order', order_dict)
 
-        # Get all the rows of the repeating panel
-        for item in self.repeating_panel_1.get_components():
-          # Reset the quantity ordered, extended price and total to 0
-          item.text_qty.text = 0
-          item.text_ext_price.text = '$0.00'
-          self.text_total.text = '$0.00'
+    self.clear_order_qtys()
+
+  def get_new_order_id(self):
+    # Get all the current orders 
+    orders = anvil.server.call('get_orders')
+    
+    # Create a list of existing orders ids
+    order_list = []
+    for order in orders:
+      order_list.append(order['order_id'])
+    
+    # Create a new, unique order id
+    return max(order_list) + 1 if order_list  else 1
+
+  def clear_order_qtys(self):
+    # Get all the rows of the repeating panel
+    for item in self.repeating_panel_1.get_components():
+      # Reset the quantity ordered, extended price and total to 0
+      item.text_qty.text = 0
+      item.text_ext_price.text = '$0.00'
+      self.text_total.text = '$0.00'
           
