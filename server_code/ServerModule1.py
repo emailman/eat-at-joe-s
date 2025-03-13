@@ -49,3 +49,7 @@ def add_order(order_dict):
 def get_orders():
   # get a list of orders from the orders table
   return app_tables.orders.search()
+
+@anvil.server.callable
+def add_order_tracking(order_tracking_dict):
+  app_tables.order_tracking.add_row(**order_tracking_dict)

@@ -84,7 +84,9 @@ class OrderForm3(OrderForm3Template):
           'extended_price': float(item.text_ext_price.text.lstrip('$'))
         }
         anvil.server.call('add_order', order_dict)
-
+        
+    self.post_order_tracking(new_order_id, float(self.text_total.text.lstrip('$')))
+    
     self.clear_order_qtys()
 
   def get_new_order_id(self):
@@ -106,4 +108,11 @@ class OrderForm3(OrderForm3Template):
       item.text_qty.text = 0
       item.text_ext_price.text = '$0.00'
       self.text_total.text = '$0.00'
+
+  def post_order_tracking(self, new_order_id, order_total):
+    tracking_order_dict = {
+      'order_id': new_order_id,
+      'order_total': order_total
+    }
+    anvil.server.call('add_order_tracking', tracking_order_dict)
           
