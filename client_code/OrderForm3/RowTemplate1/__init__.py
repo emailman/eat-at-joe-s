@@ -71,5 +71,5 @@ class RowTemplate1(RowTemplate1Template):
     if save_clicked:
       anvil.server.call('update_item', self.item, item_copy)
 
-      # Now refresh the page
+      # Now, refresh the page
       self.refresh_data_bindings()
