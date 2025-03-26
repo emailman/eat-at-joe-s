@@ -36,7 +36,7 @@ components:
     - {data_key: description, expand: false, id: DFYTJW, title: Description, width: 160}
     - {data_key: unit_price, expand: false, id: LXGBDR, title: Item Price, width: 100}
     - {data_key: '', expand: false, id: NMXPTW, title: Order Quantity, width: 219}
-    - {data_key: text_ext_price, expand: false, id: NADZTW, title: Price, width: 99}
+    - {data_key: text_ext_price, expand: false, id: NADZTW, title: Price, width: '100'}
     - {data_key: '', expand: false, id: SDAGNT, title: '', width: 146}
     show_page_controls: false
   type: DataGrid

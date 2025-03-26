@@ -35,7 +35,7 @@ class RowTemplate1(RowTemplate1Template):
     str_unit_price = self.item['unit_price']
 
     # Strip the $ from the unit_price
-    unit_price = str_unit_price[1:]
+    unit_price = str_unit_price.lstrip('$')
 
     # Calculate the extended price
     ext_price = float(unit_price) * int(self.text_qty.text)
@@ -44,7 +44,7 @@ class RowTemplate1(RowTemplate1Template):
     self.text_ext_price.text = f'${ext_price:.2f}'
 
     # Raise an event to calculate the total price of the order
-    self.parent.raise_event('x-add-prices', item=self.item)
+    self.parent.raise_event('x-add-prices')
 
   
   def delete_item_button_click(self, **event_args):
