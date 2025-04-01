@@ -1,4 +1,4 @@
-from ._anvil_designer import RowTemplate1Template
+from ._anvil_designer import ItemsTemplate
 from anvil import *
 import anvil.server
 import anvil.tables as tables
@@ -7,7 +7,7 @@ from anvil.tables import app_tables
 from ...AddItem import AddItem
 
 
-class RowTemplate1(RowTemplate1Template):
+class Items(ItemsTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)

@@ -21,7 +21,7 @@ components:
   type: form:dep_lin1x4oec0ytd:_Components.Heading
 - components:
   - name: repeating_panel_1
-    properties: {item_template: Menu.RowTemplate1}
+    properties: {item_template: Menu.Items}
     type: RepeatingPanel
   - layout_properties: {slot: footer}
     name: column_panel_1
