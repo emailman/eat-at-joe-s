@@ -1,4 +1,4 @@
-from ._anvil_designer import OrderForm3Template
+from ._anvil_designer import MenuTemplate
 from anvil import *
 import anvil.server
 import anvil.tables as tables
@@ -7,7 +7,7 @@ from anvil.tables import app_tables
 from ..AddItem import AddItem
 
 
-class OrderForm3(OrderForm3Template):
+class Menu(MenuTemplate):
   def __init__(self, **properties):
     # Set form properties and data bindings
     self.init_components(**properties)
@@ -15,10 +15,10 @@ class OrderForm3(OrderForm3Template):
     # Load the data from the menu table
     self.repeating_panel_1.items = app_tables.menu.search()
 
-    # Handle the event to add the prices for all the items
+    # Set an event handler to add the prices for all the items
     self.repeating_panel_1.set_event_handler('x-add-prices', self.add_item_prices)
 
-    # Set an event handler on the Repeating Panel 
+    # Set an event handler to delete an item from the repeating panel 
     self.repeating_panel_1.set_event_handler('x-delete-item', self.delete_item)
     
   def add_item_prices(self, **event_args):
@@ -54,7 +54,7 @@ class OrderForm3(OrderForm3Template):
     # Delete the article
     anvil.server.call('delete_item', item)
 
-    # Refresh articles to remove the deleted article from the Homepage
+    # Refresh menu to remove the deleted item
     self.refresh_items()
 
   def button_order_click(self, **event_args):
@@ -99,7 +99,7 @@ class OrderForm3(OrderForm3Template):
       order_list.append(order['order_id'])
     
     # Create a new, unique order id
-    return max(order_list) + 1 if order_list  else 1
+    return max(order_list) + 1 if order_list else 1
 
   def clear_order_qtys(self):
     # Get all the rows of the repeating panel
