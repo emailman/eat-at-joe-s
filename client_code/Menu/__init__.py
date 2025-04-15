@@ -59,7 +59,6 @@ class Menu(MenuTemplate):
 
   def button_order_click(self, **event_args):
     """This method is called when the order button is clicked."""
-
     # Was anything ordered
     if float(self.text_total.text.lstrip('$')) == 0:
       return

@@ -56,5 +56,4 @@ def get_orders():
 def add_order_tracking(order_tracking_dict):
   app_tables.order_tracking.add_row(
     order_entered=datetime.now().astimezone(),
-    
     **order_tracking_dict)
