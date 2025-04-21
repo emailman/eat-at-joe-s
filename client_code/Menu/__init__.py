@@ -119,4 +119,3 @@ class Menu(MenuTemplate):
       'order_total': order_total
     }
     anvil.server.call('add_order_tracking', tracking_order_dict)
-          
